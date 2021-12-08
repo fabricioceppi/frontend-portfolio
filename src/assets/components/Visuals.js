@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import { useState } from "react/cjs/react.development";
 import { Agent, random } from "./Agents";
 
 function Visuals() {
@@ -13,6 +14,15 @@ function Visuals() {
   setCircle();
 
   useEffect(() => {
+    window.addEventListener("mousemove", (e) => {
+      mouseRef.current.x = e.clientX;
+      mouseRef.current.y = e.clientY;
+      mouseRef.current.radius = circleRef.current.radius / 4;
+    });
+    window.addEventListener("mouseout", () => {
+      mouseRef.current.radius = 0;
+    });
+
     contextRef.current = canvasRef.current.getContext("2d");
 
     while (
