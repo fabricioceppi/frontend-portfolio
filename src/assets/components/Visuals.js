@@ -4,11 +4,13 @@ import { Agent, random } from "./Agents";
 function Visuals() {
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
-  const clientRef = useRef({ w: null, h: null});
+  const clientRef = useRef({ w: window.innerWidth, h: window.innerHeight });
   const circleRef = useRef({ pos: null, radius: null });
-  const mouseRef = useRef({ x: 0, y: 0, radius: 0});
+  const mouseRef = useRef({ x: 0, y: 0, radius: 0 });
   const agentsRef = useRef([]);
   const animationRef = useRef(null);
+
+  setCircle();
 
   useEffect(() => {
     contextRef.current = canvasRef.current.getContext("2d");
@@ -34,19 +36,7 @@ function Visuals() {
       canvasRef.current.width = clientRef.current.w;
       canvasRef.current.height = clientRef.current.h;
 
-      if (clientRef.current.w > clientRef.current.h) {
-        circleRef.current.radius = clientRef.current.h / 3;
-        circleRef.current.pos = {
-          x: clientRef.current.w - circleRef.current.radius * 1.5,
-          y: circleRef.current.radius * 1.5,
-        };
-      } else {
-        circleRef.current.radius = clientRef.current.w / 3;
-        circleRef.current.pos = {
-          x: clientRef.current.w / 2,
-          y: clientRef.current.h / 2 + circleRef.current.radius,
-        };
-      }
+      setCircle();
 
       contextRef.current.clearRect(
         0,
@@ -90,12 +80,28 @@ function Visuals() {
         agent.update();
         agent.draw(contextRef.current, color);
       });
-      
+
       animationRef.current = requestAnimationFrame(animate);
     }
 
     animate();
   }, []);
+
+  function setCircle() {
+    if (clientRef.current.w > clientRef.current.h) {
+      circleRef.current.radius = clientRef.current.h / 3;
+      circleRef.current.pos = {
+        x: clientRef.current.w - circleRef.current.radius * 1.5,
+        y: circleRef.current.radius * 1.5,
+      };
+    } else {
+      circleRef.current.radius = clientRef.current.w / 3;
+      circleRef.current.pos = {
+        x: clientRef.current.w / 2,
+        y: clientRef.current.h / 2 + circleRef.current.radius,
+      };
+    }
+  }
 
   function setColorByDistance(v1, v2) {
     let color;
