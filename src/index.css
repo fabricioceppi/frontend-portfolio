@@ -1,13 +1,425 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Fabricio Ceppi Portfolio - Estilos Principales */
+
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap");
+
+html {
+  font-size: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  font-family: "Work Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Text Classes */
+
+.tiny {
+  font-size: 0.75rem;
+  line-height: 0.75rem;
+}
+
+.small {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.medium {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  margin-bottom: 1.2rem;
+}
+
+.big {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.white {
+  color: white;
+}
+
+.red {
+  color: #ff364a;
+}
+
+.weak-blue {
+  color: #3b4263;
+}
+
+.blue {
+  color: #0c2e4e;
+}
+
+.grey {
+  color: #9a9a9a;
+}
+
+.semi-bold {
+  font-weight: 600;
+}
+
+main {
+  background-size: auto 100vh;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+    145deg,
+    #06070e 0 20%,
+    #1c142c 70%,
+    #2e141e
+  );
+}
+
+/* Hero */
+
+.hero {
+  height: 100vh;
+  position: relative;
+  padding: 2rem;
+  z-index: 2;
+}
+
+/* .hero > * {
+  z-index: 2;
+} */
+
+.location {
+  display: flex;
+  align-items: center;
+}
+
+.location > p {
+  margin-left: 0.7rem;
+}
+
+/* Canvas */
+
+.visuals {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* NavBar */
+
+nav {
+  margin-bottom: 4rem;
+}
+
+.menu-button > div {
+  width: 24px;
+  height: 3px;
+  background-color: white;
+  margin-bottom: 4px;
+  border-radius: 2px;
+}
+
+.menu-items {
+  display: none;
+}
+
+.separator {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  transform: translateY(1px);
+}
+
+/* About */
+
+.about {
+  padding: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.about p {
+  margin: 1.5rem 0;
+}
+
+.about > div:first-child {
+  margin: 1rem;
+}
+
+.skill-set > h2 {
+  margin: 1em;
+}
+
+.skill-set > div {
+  background-color: #261d3d;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1.5em 2em -0.5em #c2c2c2;
+}
+
+.skill {
+  margin: 0.65rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.skill > .small {
+  margin: 0 0.5rem;
+  flex: 0 0 10ch;
+}
+
+.stars > * {
+  margin-right: 3px;
+}
+
+.skill-set ul {
+  margin-bottom: 2.5rem;
+}
+
+.action-button {
+  background-color: #ff364a;
+  border: 1px solid white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  margin: 0;
+}
+
+/* Bottom Sections */
+
+.night-background {
+  background-image: linear-gradient(145deg, #06070e 0 20%, #1c142c);
+}
+
+/* Projects */
+
+.projects {
+  padding: 3rem 2rem;
+}
+
+.projects .big {
+  margin-bottom: 2rem;
+}
+
+.project-links > svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
+}
+
+.projects > div + div {
+  margin: 3rem 0;
+}
+
+.project-displayer {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.techs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.techs > div {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 8px;
+  background-color: #261d3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+}
+
+.projects-list > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.projects-list li {
+  font-size: 1rem;
+  color: #9a9a9a;
+  display: inline-block;
+}
+
+.projects-list li[aria-pressed="true"] {
+  color: #ff364a;
+}
+
+/* Contact */
+
+.contact {
+  padding: 0 2rem;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.contact .small {
+  margin: 0;
+}
+
+.contact-button {
+  border: 1px solid #363dff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 2rem;
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  color: white;
+  font-weight: 600;
+}
+
+.contact-button:last-of-type {
+  border-color: #ff364a;
+}
+
+.contact-button svg {
+  margin-right: 0.5rem;
+}
+
+/* Footer */
+
+footer {
+  margin: 1rem;
+  margin-bottom: 0;
+  padding: 1.5rem 1rem;
+  border-top: 1px solid #9a9a9a;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Responsiveness */
+
+@media only screen and (min-width: 576px) {
+  .skill {
+    float: left;
+    margin: 0.65rem 0 0 0;
+    width: 50%;
+  }
+
+  .skill-set ul::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .techs {
+    justify-content: space-evenly;
+  }
+
+  /* html {
+    font-size: 112.5%;
+  } */
+}
+
+@media only screen and (min-width: 992px) {
+  .big {
+    font-size: 2.5rem;
+  }
+
+  section {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  .main-heading {
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+  }
+
+  .about {
+    display: flex;
+    position: relative;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  .about > div {
+    flex: 1 1 50%;
+  }
+
+  .skill {
+    width: 100%;
+  }
+
+  .skill-set ul {
+    margin: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .action-button {
+    position: absolute;
+    bottom: 1rem;
+    left: 2rem;
+  }
+
+  .projects {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+  }
+
+  .projects > div {
+    flex: 1 1 50%;
+  }
+
+  .projects > div + div {
+    margin: 3rem 0 0 0;
+  }
+
+  .techs {
+    justify-content: space-between;
+  }
+
+  .projects-list {
+    position: absolute;
+    left: 2rem;
+    bottom: 4rem;
+    margin-bottom: 4px;
+    width: 44%;
+    width: calc(50% - 3rem);
+  }
+
+  .projects-list li {
+    width: 30%;
+  }
+
+  .techs > div {
+    margin-bottom: 0;
+  }
+
+  .contact {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    padding: 2rem;
+  }
+
+  nav {
+    margin-bottom: 0;
+  }
 }
