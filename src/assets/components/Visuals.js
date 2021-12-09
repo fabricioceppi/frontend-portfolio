@@ -98,10 +98,11 @@ function Visuals() {
   }, []);
 
   function setCircle() {
+    let m = clientRef.current.w > 1300 ? 150 : 0;
     if (clientRef.current.w > clientRef.current.h) {
       circleRef.current.radius = clientRef.current.h / 3;
       circleRef.current.pos = {
-        x: clientRef.current.w - circleRef.current.radius * 1.5,
+        x: clientRef.current.w - circleRef.current.radius * 1.5 - m,
         y: circleRef.current.radius * 1.5,
       };
     } else {

@@ -90,9 +90,9 @@ main {
   z-index: 2;
 }
 
-/* .hero > * {
-  z-index: 2;
-} */
+.main-heading {
+  margin-top: 4.5rem;
+}
 
 .location {
   display: flex;
@@ -115,21 +115,132 @@ main {
 
 /* NavBar */
 
-nav {
-  margin-bottom: 4rem;
+.menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.nav-back {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
+  z-index: -1;
+  transition: transform 300ms cubic-bezier(1,.02,.59,.75) 200ms;
+}
+
+.menu-button {
+  margin-top: 3px;
+  margin-left: 1px;
 }
 
 .menu-button > div {
-  width: 24px;
+  width: 22px;
   height: 3px;
   background-color: white;
-  margin-bottom: 4px;
   border-radius: 2px;
 }
 
-.menu-items {
-  display: none;
+.menu-button > div + div {
+  margin-top: 4px;
 }
+
+.menu-items {
+  margin-top: 4rem;
+}
+
+.item {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  opacity: 0;
+  transition: transform 200ms, opacity 200ms;
+  transform-origin: bottom;
+}
+
+.item:nth-of-type(4) {
+  transition-delay: 50ms;
+}
+
+.item:nth-of-type(3) {
+  transition-delay: 100ms;
+}
+
+.item:nth-of-type(2) {
+  transition-delay: 150ms;
+}
+
+.item:first-of-type {
+  transition-delay: 200ms;
+}
+
+.item > div {
+  float: left;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.item svg {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.item > spam {
+  display: inline-block;
+  width: 9ch;
+  margin-bottom: 0;
+  margin-left: 1rem;
+}
+
+/* Opened menu */
+
+.menu.active {
+  padding-left: 1.5rem;
+  border-bottom-right-radius: 8px;
+}
+
+.menu.active > .nav-back {
+  transform: scale(14);
+  transition-delay: 50ms;
+}
+
+.menu.active > .menu-button {
+  margin-left: 9px;
+}
+
+.menu.active .item {
+  transform: scaley(1);
+  opacity: 1;
+  transition: transform 200ms, opacity 300ms;
+}
+
+.menu.active .item:first-of-type {
+  transition-delay: 300ms;
+}
+
+.menu.active .item:nth-of-type(2) {
+  transition-delay: 400ms;
+}
+
+.menu.active .item:nth-of-type(3) {
+  transition-delay: 500ms;
+}
+
+.menu.active .item:nth-of-type(4) {
+  transition-delay: 600ms;
+}
+
+/* End of Hero */
 
 .separator {
   position: absolute;
@@ -298,7 +409,7 @@ footer {
   margin: 1rem;
   margin-bottom: 0;
   padding: 1.5rem 1rem;
-  border-top: 1px solid #9a9a9a;
+  border-top: 1px dashed #3b4263;
   display: flex;
   justify-content: space-between;
 }
@@ -337,13 +448,12 @@ footer {
   section {
     max-width: 900px;
     margin: 0 auto;
-  }
-
-  .menu-button {
-    display: none;
+    border-left: 1px dashed rgba(59, 66, 99, 0.8);
+    border-right: 1px dashed rgba(59, 66, 99, 0.8);
   }
 
   .main-heading {
+    margin-top: 0;
     position: absolute;
     top: 50%;
     left: 2rem;
@@ -353,12 +463,19 @@ footer {
   .about {
     display: flex;
     position: relative;
-    margin-top: 3rem;
-    margin-bottom: 4rem;
+    margin-bottom: 0;
+    padding: 4rem 2rem;
+    gap: 2rem;
+    border-left: 1px dashed #c2c2c2;
+    border-right: 1px dashed #c2c2c2;
   }
 
   .about > div {
     flex: 1 1 50%;
+  }
+
+  .about > div:first-child {
+    margin: 0;
   }
 
   .skill {
@@ -372,7 +489,7 @@ footer {
 
   .action-button {
     position: absolute;
-    bottom: 1rem;
+    bottom: 4rem;
     left: 2rem;
   }
 
@@ -414,12 +531,22 @@ footer {
   }
 
   .contact {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    padding: 2rem;
+    padding: 6rem 2rem;
+    margin-bottom: 0;
   }
 
   nav {
     margin-bottom: 0;
+  }
+
+  footer {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .menu-button {
+    display: none;
   }
 }
