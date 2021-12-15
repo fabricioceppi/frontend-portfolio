@@ -44,9 +44,9 @@ function Contact() {
       </div>
 
       <div>
-          <a className='contact-button' href='#'><GitHubIcon fill='#363DFF'/>GitHub</a>
-          <a className='contact-button' href='#'><LinkedInIcon />LinkedIn</a>
-          <a className='contact-button' href='#'><MailIcon />fabricioceppi</a>
+          <a className='contact-button'  href='https://github.com/fabricioceppi'><GitHubIcon fill='#363DFF'/>GitHub</a>
+          <a className='contact-button'  href='https://www.linkedin.com/in/fabricioceppi/'><LinkedInIcon />LinkedIn</a>
+          <a className='contact-button'  href='mailto:fabricioceppi@gmail.com'><MailIcon />fabricioceppi</a>
       </div>
     </section>
   );

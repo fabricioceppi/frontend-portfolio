@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from "react";
-import { useState } from "react/cjs/react.development";
 import { Agent, random } from "./Agents";
 
 function Visuals() {

@@ -20,7 +20,7 @@ function About(props) {
 
   });
   return (
-    <section className="about">
+    <section className="about" id='about'>
       <div>
         <h2 className="red small">Sobre mi</h2>
         <p className="weak-blue small">{props.about}</p>
@@ -30,7 +30,7 @@ function About(props) {
         <h2 className="blue small">Resumen de conocimientos</h2>
         <div>
           <ul>{skills}</ul>
-          <button className="action-button white small">Ver Curriculum</button>
+          <a className="action-button white small" href='./downloads/Cv-Front-End.pdf'>Ver Curriculum</a>
         </div>
       </div>
     </section>

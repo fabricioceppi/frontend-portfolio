@@ -20,32 +20,32 @@ function NavBar() {
         <div></div>
       </div>
 
-      <ul className="menu-items">
-        <li className="item">
-          <div>
+      <div className="menu-items">
+        <a className="item" href='#home' onFocus={() => setMenuState(true)}>
+          <div className="item-icon">
             <Home fill="white" />
           </div>
-          <spam className="medium semi-bold white">Inicio</spam>
-        </li>
-        <li className="item">
-          <div>
+          <div className="medium semi-bold white item-name">Inicio</div>
+        </a>
+        <a className="item" href='#about'>
+          <div className="item-icon">
             <Person fill="white" />
           </div>
-          <spam className="medium semi-bold white">Sobre mi</spam>
-        </li>
-        <li className="item">
-          <div>
+          <div className="medium semi-bold white item-name">Sobre mi</div>
+        </a>
+        <a className="item" href='#projects'>
+          <div className="item-icon">
             <Squares fill="white" />
           </div>
-          <spam className="medium semi-bold white">Proyectos</spam>
-        </li>
-        <li className="item">
-          <div>
+          <div className="medium semi-bold white item-name">Proyectos</div>
+        </a>
+        <a className="item" href='#contact' onBlur={() => setMenuState(false)}>
+          <div className="item-icon">
             <Plane fill="white" />
           </div>
-          <spam className="medium semi-bold white">Contacto</spam>
-        </li>
-      </ul>
+          <div className="medium semi-bold white item-name">Contacto</div>
+        </a>
+      </div>
     </nav>
   );
 }
