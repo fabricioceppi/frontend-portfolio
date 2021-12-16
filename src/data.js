@@ -56,7 +56,7 @@ const DATA = {
       una pieza visual interactiva, creada con Canvas y JavaScript (algo con lo que me gusta experimentar).`,
       repository: "https://github.com/fabricioceppi/frontend-portfolio",
       liveSite: "https://fabricioceppi.github.io/frontend-portfolio/",
-      techs: ["HTML", "CSS", "JavaScript"],
+      techs: ["React", "HTML", "CSS", "JavaScript"],
       screenShot: "./images/portfolio.png",
     },
     {
