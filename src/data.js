@@ -46,6 +46,20 @@ const DATA = {
       screenShot: "./images/macula.png",
     },
     {
+      name: "Portfolio personal",
+      id: "portfolio",
+      description: `Este sitio web (en el que estás navegando) fue diseñado para exhibir mis proyectos personales.
+      Mi objetivo era crear un sitio fácil de navegar y mantener, visualmente atractivo y amigable con el usuario.
+      La carga de contenidos se hace sencilla, tan solo modificando el objeto que se encuentra
+      en data.js pueden agregarse nuevos proyectos y habilidades, o sustituirse completamente para que otro desarrollador despliegue su portfolio fácilmente.
+      La sección superior contiene
+      una pieza visual interactiva, creada con Canvas y JavaScript (algo con lo que me gusta experimentar).`,
+      repository: "https://github.com/fabricioceppi/frontend-portfolio",
+      liveSite: "https://fabricioceppi.github.io/frontend-portfolio/",
+      techs: ["HTML", "CSS", "JavaScript"],
+      screenShot: "./images/portfolio.png",
+    },
+    {
       name: "Sneakers product page",
       id: "sneakers",
       description: `Página de producto con carrito de compra, creada como solución al desafío de Frontend Mentor "e-commerce-product-page".
@@ -63,8 +77,10 @@ const DATA = {
       description: `Componente interactivo creado como solución al desafío de Frontend Mentor "Interactive pricing component", cuyo user story
       exige el uso de dos inputs, uno para seleccionar el plan de hosting y otro para alternar entre pago mensual y anual, modificando el precio final.
       Para el primero se utilizó un range, y para el segundo un set de radios. Para mejorar su apariencia y experiencia en la interacción se hizo uso de JavaScript y de sus respectivos pseudoelementos en CSS.`,
-      repository: "#",
-      liveSite: "#",
+      repository:
+        "https://github.com/fabricioceppi/interactive-pricing-component",
+      liveSite:
+        "https://fabricioceppi.github.io/interactive-pricing-component/",
       techs: ["HTML", "CSS", "JavaScript"],
       screenShot: "./images/pricingcomponent.png",
     },

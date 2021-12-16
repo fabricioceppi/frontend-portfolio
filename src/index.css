@@ -472,7 +472,7 @@ main {
   border-top: 1px solid #9a9a9a;
 }
 
-.projects-list li:last-of-type {
+.projects-list ul {
   border-bottom: 1px solid #9a9a9a;
 }
 
